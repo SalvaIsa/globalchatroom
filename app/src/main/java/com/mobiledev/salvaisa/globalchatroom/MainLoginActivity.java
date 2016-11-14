@@ -3,6 +3,7 @@ package com.mobiledev.salvaisa.globalchatroom;
 import android.animation.Animator;
 import android.animation.AnimatorListenerAdapter;
 import android.annotation.TargetApi;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -31,6 +32,9 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 import java.util.List;
+
+import studios.codelight.smartloginlibrary.SmartLoginBuilder;
+import studios.codelight.smartloginlibrary.SmartLoginConfig;
 
 import static android.Manifest.permission.READ_CONTACTS;
 
@@ -86,6 +90,7 @@ public class MainLoginActivity extends AppCompatActivity implements LoaderCallba
         mEmailSignInButton.setOnClickListener(new OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 attemptLogin();
             }
         });
