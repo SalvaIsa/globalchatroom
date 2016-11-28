@@ -56,10 +56,10 @@ public class LoginActivity extends AppCompatActivity {
     public void login() {
         Log.d(TAG, "Login");
 
-        if (!validate()) {
+        /* if (!validate()) {
             onLoginFailed();
             return;
-        }
+        } */
 
         _loginButton.setEnabled(false);
 
@@ -82,7 +82,7 @@ public class LoginActivity extends AppCompatActivity {
                         // onLoginFailed();
                         progressDialog.dismiss();
                     }
-                }, 3000);
+                }, 1000);
     }
 
 

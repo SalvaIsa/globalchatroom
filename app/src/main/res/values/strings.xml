@@ -23,4 +23,6 @@
     <string name="action_settings">Settings</string>
 
     <string name="hello_blank_fragment">Ciao patata</string>
+    <string name="title_activity_prova_niente">ProvaNiente</string>
+    <string name="title_activity_schifosa">Schifosa</string>
 </resources>
