@@ -37,4 +37,7 @@ dependencies {
     testCompile 'junit:junit:4.12'
     // Magical Floating Button
     compile 'com.github.clans:fab:1.6.4'
+    // Discrete Material Slider
+    compile 'com.github.lawloretienne:discreteslider:0.0.9'
+
 }
