@@ -27,7 +27,7 @@ dependencies {
     //Support libraries
     compile 'com.android.support:appcompat-v7:24.2.1'
     compile 'com.android.support:design:24.2.1'
-    compile 'com.jakewharton:butterknife:6.1.0'
+    compile 'com.jakewharton:butterknife:7.0.1'
     //Facebook SDK
     compile 'com.facebook.android:facebook-android-sdk:4.0.1'
     //Google Play Services

@@ -26,7 +26,7 @@
         <android.support.design.widget.TabLayout
         android:id="@+id/tab_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="32dp"
         android:layout_gravity="top"
         android:background="?attr/colorPrimary"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
@@ -34,12 +34,14 @@
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"/>
-    <!-- android:elevation="6dp"
-    android:minHeight="?attr/actionBarSize" -->
+        <!-- android:elevation="6dp"
+        android:minHeight="?attr/actionBarSize" -->
 
+        <!-- original android:layout_height="64dp"-->
         <com.etiennelawlor.discreteslider.library.ui.DiscreteSlider
+            android:id="@+id/range_slider"
             android:layout_width="match_parent"
-            android:layout_height="64dp"
+            android:layout_height="50dp"
             android:paddingLeft="8dp"
             android:paddingRight="8dp"
             android:layout_gravity="center"
@@ -48,7 +50,7 @@
             app:backdropStrokeColor="@color/grey_300"
             app:backdropStrokeWidth="1dp"
             app:horizontalBarThickness="4dp"
-            app:tickMarkCount="6"
+            app:tickMarkCount="4"
             app:tickMarkRadius="8dp"
             app:position="1"
             app:thumb="@drawable/thumb"

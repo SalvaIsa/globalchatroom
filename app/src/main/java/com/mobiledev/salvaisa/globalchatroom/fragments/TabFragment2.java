@@ -1,17 +1,27 @@
 package com.mobiledev.salvaisa.globalchatroom.fragments;
 
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
+import com.etiennelawlor.discreteslider.library.ui.DiscreteSlider;
+import com.etiennelawlor.discreteslider.library.utilities.DisplayUtility;
 import com.github.clans.fab.FloatingActionButton;
 import com.mobiledev.salvaisa.globalchatroom.R;
 
 import java.util.LinkedList;
+
+import butterknife.Bind;
+import butterknife.ButterKnife;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -26,14 +36,19 @@ public class TabFragment2 extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.tab_fragment_2, container, false);
+
+        View properView = inflater.inflate(R.layout.tab_fragment_2, container, false);
+
+        return properView;
     }
 
     @Override
     public void onViewCreated(View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
+        /*
+            Codice di prova che mostra tutte le animazioni possibili
+         */
         mProgressTypes = new LinkedList<>();
         for (ProgressType type : ProgressType.values()) {
             mProgressTypes.offer(type);
@@ -77,7 +92,7 @@ public class TabFragment2 extends Fragment {
             }
         });
 
-    }
+    }// endregion
 
     /*
     private void increaseProgress(final FloatingActionButton fab, int i) {
