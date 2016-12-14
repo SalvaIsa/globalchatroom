@@ -116,6 +116,15 @@ public class TabFragment2 extends Fragment {
         }
     }*/
 
+    /*
+    discreteSlider.setOnDiscreteSliderChangeListener(new DiscreteSlider.OnDiscreteSliderChangeListener() {
+        @Override
+        public void onPositionChanged(int position) {
+
+
+        }
+    }); */
+
     private enum ProgressType {
         INDETERMINATE, PROGRESS_POSITIVE, PROGRESS_NEGATIVE, HIDDEN, PROGRESS_NO_ANIMATION, PROGRESS_NO_BACKGROUND
     }

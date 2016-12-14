@@ -21,17 +21,12 @@ import com.mobiledev.salvaisa.globalchatroom.fragments.PagerAdapter;
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
-    private DiscreteSlider discreteSlider;
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        discreteSlider = (DiscreteSlider) findViewById(R.id.range_slider);
-        discreteSlider.setVisibility(View.GONE);
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -61,12 +56,9 @@ public class MainActivity extends AppCompatActivity
                 switch(tab.getPosition())
                 {
                     case 0:
-                        discreteSlider.setVisibility(View.GONE);
                         break;
                     case 1:
-                        discreteSlider.setVisibility(View.VISIBLE);
                         break;
-
                     default:
                         break;
                 }
@@ -83,10 +75,6 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
-        /*
-            Roba per lo slider, sto solo provando ora
-         */
-        addProveSlider();
     }
 
     @Override
@@ -145,18 +133,4 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    public void addProveSlider()
-    {
-         /*
-            Aggiunta ChangeListener allo Slider
-         */
-        discreteSlider.setOnDiscreteSliderChangeListener(new DiscreteSlider.OnDiscreteSliderChangeListener() {
-            @Override
-            public void onPositionChanged(int position) {
-
-
-            }
-        });
-
-    }
 }

@@ -37,32 +37,15 @@
         <!-- android:elevation="6dp"
         android:minHeight="?attr/actionBarSize" -->
 
-        <!-- original android:layout_height="64dp"-->
-        <com.etiennelawlor.discreteslider.library.ui.DiscreteSlider
-            android:id="@+id/range_slider"
-            android:layout_width="match_parent"
-            android:layout_height="50dp"
-            android:paddingLeft="8dp"
-            android:paddingRight="8dp"
-            android:layout_gravity="center"
-            android:background="@color/grey_100"
-            app:backdropFillColor="@color/grey_200"
-            app:backdropStrokeColor="@color/grey_300"
-            app:backdropStrokeWidth="1dp"
-            app:horizontalBarThickness="4dp"
-            app:tickMarkCount="4"
-            app:tickMarkRadius="8dp"
-            app:position="1"
-            app:thumb="@drawable/thumb"
-            app:progressDrawable="@drawable/transparent_progress_drawable"/>
-
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
         android:layout_width="match_parent"
-        android:layout_height="fill_parent"
-        android:layout_below="@id/tab_layout"/>
+        android:layout_height="match_parent"
+        android:layout_marginTop="0dp"
+        android:layout_below="@id/tab_layout"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"/>
 
     <!-- <include layout="@layout/content_main" /> -->
 
