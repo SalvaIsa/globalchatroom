@@ -25,4 +25,6 @@
     <string name="hello_blank_fragment">Ciao patata</string>
     <string name="title_activity_prova_niente">ProvaNiente</string>
     <string name="title_activity_schifosa">Schifosa</string>
+    <string name="facebook_app_id">1744000659252015</string>
+
 </resources>

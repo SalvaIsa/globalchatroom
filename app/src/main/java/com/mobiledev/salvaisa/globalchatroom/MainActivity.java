@@ -1,5 +1,6 @@
 package com.mobiledev.salvaisa.globalchatroom;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.view.ViewPager;
@@ -9,6 +10,7 @@ import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -16,15 +18,60 @@ import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.etiennelawlor.discreteslider.library.ui.DiscreteSlider;
+import com.facebook.CallbackManager;
+import com.facebook.FacebookCallback;
+import com.facebook.FacebookSdk;
+import com.facebook.FacebookException;
+import com.facebook.login.LoginManager;
+import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.mobiledev.salvaisa.globalchatroom.fragments.PagerAdapter;
+
+import java.util.concurrent.Callable;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener{
 
+    private CallbackManager mFacebookCallbackManager;
+    private LoginButton mFacebookSignInButton;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        FacebookSdk.sdkInitialize(getApplicationContext());
+        mFacebookCallbackManager = CallbackManager.Factory.create();
+
+
+        // This MUST be placed after the above two lines.
         setContentView(R.layout.activity_main);
+
+        mFacebookSignInButton = (LoginButton)findViewById(R.id.facebook_sign_in_button);
+        mFacebookSignInButton.registerCallback(mFacebookCallbackManager,
+                new FacebookCallback<LoginResult>() {
+                    @Override
+                    public void onSuccess(final LoginResult loginResult) {
+                        //TODO: Use the Profile class to get information about the current user.
+                        handleSignInResult(new Callable<Void>() {
+                            @Override
+                            public Void call() throws Exception {
+                                LoginManager.getInstance().logOut();
+                                return null;
+                            }
+                        });
+                    }
+
+                    @Override
+                    public void onCancel() {
+                        handleSignInResult(null);
+                    }
+
+                    @Override
+                    public void onError(FacebookException error) {
+                        Log.d(LoginActivity.class.getCanonicalName(), error.getMessage());
+                        handleSignInResult(null);
+                    }
+                });
+
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -75,6 +122,21 @@ public class MainActivity extends AppCompatActivity
             }
         });
 
+
+
+    }
+
+    private void handleSignInResult(Callable<Void> callable) {
+    }
+
+
+    @Override
+    public void onActivityResult(int requestCode, int resultCode, Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        // (...)
+
+        mFacebookCallbackManager.onActivityResult(requestCode, resultCode, data);
     }
 
     @Override
